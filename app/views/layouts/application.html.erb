@@ -69,28 +69,32 @@
 						</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						
-<li>
-<% if !user_signed_in? %>
-<%= link_to "Sign Up" ,new_user_registration_path %>
-<% end %>
-</li>
-<li>
-<% if !user_signed_in? %>
-<%= link_to "Sign In" ,new_user_session_path %>
-<% end %>
-</li>
-<li>
-<% if user_signed_in? %>
-<%= "Hi, " %>
-<%= current_user.email.split('@')[0] %>
-<% end %>  
-</li>
-<li>
-<% if user_signed_in? %>
-<%= link_to "Logout" ,destroy_user_session_path,method: :delete %>
-<% end %>
-</li>
+              <li>
+              <% if !user_signed_in? %>
+              <%= link_to "Sign Up" ,new_user_registration_path %>
+              <% end %>
+              </li>
+              <li>
+              <% if !user_signed_in? %>
+              <%= link_to "Sign In" ,new_user_session_path %>
+              <% end %>
+              </li>
+              <li class="usr_email">
+              <% if user_signed_in? %>
+              <%= "Hi, " %>
+              <%= current_user.email.split('@')[0] %>
+              <% end %>  
+              </li>
+              <li>
+              <% if user_signed_in? %>
+              <%= link_to "" ,cart_path,class:"glyphicon glyphicon-shopping-cart" %>
+              <% end %>
+              </li>
+              <li>
+              <% if user_signed_in? %>
+              <%= link_to "Logout" ,destroy_user_session_path,method: :delete %>
+              <% end %>
+              </li>
   					</ul>
         </div>
       </div>
@@ -107,7 +111,7 @@
       <%= yield %>
       </div>
 
-<%= render "layouts/carousel" %>
+
 
 
      <footer class="footer-distributed">
@@ -163,7 +167,7 @@ At FarmTrade, our vision is to be India's most customer centric company ,to buil
 					<a href="#"><i class="fa fa-facebook"></i></a>
 					<a href="#"><i class="fa fa-twitter"></i></a>
 					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
+					
 
 				</div>
 

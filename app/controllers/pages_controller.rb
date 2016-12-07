@@ -1,6 +1,4 @@
 class PagesController < ApplicationController
-  def products
-  end
-  def services
+  def index
   end
 end

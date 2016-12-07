@@ -1,0 +1,40 @@
+<h1>Your Cart</h1>
+<% if @cart.empty? %>
+    <p>Your cart is currently empty.</p>
+<% else %>    
+<%= link_to 'Empty your cart', cart_clear_path %>
+<% end %>
+<br><br><br>
+
+<% total = 0 %>
+<ol>
+<% @cart.each do |id,quantity| %>
+    <% service = Service.find_by_id(id) %>
+    <!--<%# product = Product.find_by_id(id) %>
+    
+    <li>
+        <%#= product.title %>
+        <p><%#= product.description %></p>
+        <p><%#= number_to_currency(product.price,unit: "Rs ") %></p>
+        <p>Quantity : <%#= quantity %></p>
+        
+    </li>
+    <%# total += quantity * product.price %>
+    -->
+    <li>
+        <%= service.title %>
+        <p><%#= product.description %></p>
+        <p><%= number_to_currency(service.price,unit: "Rs ") %></p>
+        <p>Quantity : <%= quantity %></p>
+        
+    </li>
+    
+    <% total += quantity * service.price %>
+    
+<% end %>    
+
+<p><b><%= number_to_currency(total,unit: "Rs ") %></b></p>
+</ol>
+<% if total > 0 %>
+<button type="button" class="btn btn-success" style="float:right;width:100px;">Pay</button>
+<% end %>

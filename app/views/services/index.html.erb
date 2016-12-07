@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+    <% @services.each do |service| %>
+      <div class="col-md-4 card">
+        <%= image_tag(service.image_url, class: "img-thumbnail",width:"70%") %>
+        <br>
+        <%= service.title %>
+        <br>
+        &#8377;<%= service.price %>
+        <br>
+        <a href="/cart/<%= service.id %>"> Add to cart</a>
+        <br>
+        <% if current_user and current_user.email.eql?("admin@admin.com") %>
+        <td><%= link_to 'Show', service %></td>
+        <td><%= link_to 'Edit', edit_service_path(service) %></td>
+        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </div>
+      
+    <% end %>
+  
+<br>
+
+<% if current_user and current_user.email.eql?("admin@admin.com") %>
+<%= link_to 'New Service', new_service_path %>
+<% end %>

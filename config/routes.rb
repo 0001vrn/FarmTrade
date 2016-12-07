@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  get 'pages/products'
+  
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
+  
+  resources :services
+  resources :products
+  #get 'pages/products'
 
   devise_for :users
-  post '/users/sign_up'
-  get '/users/sign_in'
+  #post '/users/sign_up'
+  #get '/users/sign_in'
   
   #get 'welcome/index'
 
@@ -12,8 +19,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  get "products" => "pages#products"
-  get "services" => "pages#services"
+  #get "products" => "pages#products"
+  #get "services" => "pages#services"
   
 
   # Example of regular route:
