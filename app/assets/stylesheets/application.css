@@ -17,4 +17,23 @@
  .usr_email{
      padding-top: 16px;
  }
+
+
+body {
+ padding-top: 150px;
+}
+
+#header {
+ background-color: black;
  
+}
+
+#header a{
+ color: white;
+}
+
+@media only screen and (max-width: 636px) {
+    body {
+         padding-top: 80px;
+    }
+}
