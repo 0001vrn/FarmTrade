@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
-  
-  resources :services
-  resources :products
   #get 'pages/products'
-
+  get '/products' => 'products#index'
+  get '/services' => 'services#index'
+  
   devise_for :users
   #post '/users/sign_up'
   #get '/users/sign_in'

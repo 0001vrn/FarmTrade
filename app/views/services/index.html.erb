@@ -1,26 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-    <% @services.each do |service| %>
-      <div class="col-md-4 card">
-        <%= image_tag(service.image_url, class: "img-thumbnail",width:"70%") %>
-        <br>
-        <%= service.title %>
-        <br>
-        &#8377;<%= service.price %>
-        <br>
-        <a href="/cart/<%= service.id %>"> Add to cart</a>
-        <br>
-        <% if current_user and current_user.email.eql?("admin@admin.com") %>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </div>
+<center>
+ <div class="row">
+    <br><br>
+     <div class="col-md-12">
+            <div class="col-md-3">
+              <a href="sowing.html"><img src="/assets/sowing.jpg" class="img-thumbnail" width="70%"></a>
+              <h4>Sowing</h4>
+            </div>
+            <div class="col-md-3">
+              <a href="ploughing.html"><img src="/assets/ploughing.jpg" class="img-thumbnail" width="70%"></a>
+              <h4>Ploughing</h4>
+            </div>
       
-    <% end %>
-  
-<br>
+            <div class="col-md-3">
+             <a href="irrigation.html"> <img src="/assets/irrigation.jpg" class="img-thumbnail" width="70%"></a>
+              <h4>Irrigation</h4>
+            </div>
+             <div class="col-md-3">
+              <a href="bullockcarts.html"><img src="/assets/bullockcarts.jpg" class="img-thumbnail" width="70%"></a>
+              <h4>Rent bullockcarts</h4>
+            </div>
+          </div>
+  </div>
+      <br>
+      <div class="row">
+          <div class="col-md-12">
+              <div class="col-md-3">
+                <a href="harvesting.html"><img src="/assets/harvesting.jpg" class="img-thumbnail" width="70%"></a>
+                <h4>Harvesting</h4>
+              </div>
+              <div class="col-md-3">
+                <img src="/assets/animalinsurance.jpg" class="img-thumbnail" width="70%">
+                <h4>Animal Insurance</h4>
+              </div>
+              <div class="col-md-3">
+                <a href="cropinsurance.html"><img src="/assets/crop insurance.jpg" class="img-thumbnail" width="80%" ></a>
+                <h4>Crop insurance</h4>
+              </div>
+      </div>
+      </div>
 
-<% if current_user and current_user.email.eql?("admin@admin.com") %>
-<%= link_to 'New Service', new_service_path %>
-<% end %>
+</center>

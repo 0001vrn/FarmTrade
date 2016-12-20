@@ -1,37 +1,29 @@
-<p id="notice"><%= notice %></p>
+<center> 
+ <div class="row">
+   <div class="col-md-12">  <br> 
+         
+   <div class="col-md-6"> 
+           <a href="seeds.html"><img src="/assets/seed3.jpg" class="img-thumbnail" width="35%"></a>       
+             <h4>Seeds</h4>
+    </div>      
+     <div class="col-md-6">       
+       <a href="fertiliserfinal.html"><img src="/assets/fertiliser1.jpg" class="img-thumbnail" width=33%></a>
+        <h4>Fertilisers</h4>     
+      </div>   
+      </div>
+      
+      <br>
 
-<h1>Listing Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
-        <td><%= product.price %></td>
-        <% if current_user and current_user.email.eql?("admin@admin.com") %>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        <td><a href="/cart/<%= product.id %>"> Add to cart</a></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<% if current_user and current_user.email.eql?("admin@admin.com") %>
-<%= link_to 'New Product', new_product_path %>
-<% end %>
+      <div class="row">
+      <div class="col-md-6">
+       <a href="toolfinal.html"> <img src="/assets/tool2.jpg" class="img-thumbnail" width=33%></a>
+        <h4>Tools</h4>
+      </div>
+      <div class="col-md-6">
+       <a href="produce.html"> <img src="/assets/produce1.jpg" class="img-thumbnail" width=37%></a>
+        <h4>Produce</h4>
+      </div>
+      </div>
+    
+    </div><br>
+    </center>
